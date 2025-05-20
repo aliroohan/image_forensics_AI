@@ -50,6 +50,11 @@ def pil_to_base64(img):
 # FORENSIC ANALYSIS FUNCTIONS
 #############################
 
+
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
+
 @app.post("/api/detect_clones")
 async def api_detect_clones(file: UploadFile = File(...)):
     """API endpoint for clone detection"""
